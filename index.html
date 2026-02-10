@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+</head>
+<body>
+    <h1>Gestor de Tareas</h1>
+    <input type="text" id="nuevaTarea" placeholder="Escribe una tarea">
+    <button onclick="añadirTarea()">Añadir tarea</button>
+    <button onclick="eliminarTarea()">Eliminar tarea</button>
+    
+    <ul id="listaTareas"></ul>
+
+    <script>
+        function añadirTarea() {
+            let tarea = document.getElementById('nuevaTarea').value;
+            if(tarea) {
+                let li = document.createElement('li');
+                li.textContent = tarea;
+                document.getElementById('listaTareas').appendChild(li);
+                document.getElementById('nuevaTarea').value = '';
+                console.log('Tarea añadida:', tarea);
+            }
+        }
+        
+        function eliminarTarea() {
+            // Por ahora vacía
+        }
+    </script>
+</body>
+</html>
