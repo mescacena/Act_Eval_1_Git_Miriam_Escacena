@@ -71,8 +71,26 @@
         }
         
         function eliminarTarea() {
-            // Por ahora vacía
+             if(tareas.length > 0) {
+            let eliminada = tareas.pop();
+            mostrarTareas();
+            console.log('Tarea eliminada:', eliminada);
+            alert('Tarea eliminada: ' + eliminada);
+        } else {
+            alert('No hay tareas para eliminar');
         }
+    }
+    
+    function mostrarTareas() {
+        let lista = document.getElementById('listaTareas');
+        lista.innerHTML = '';
+        tareas.forEach(function(t) {
+            let li = document.createElement('li');
+            li.textContent = t;
+            lista.appendChild(li);
+        });
+    }
+        
     </script>
 </body>
 </html>
